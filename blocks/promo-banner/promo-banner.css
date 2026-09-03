@@ -1,0 +1,176 @@
+.promo-banner-wrapper {
+    position: relative;
+    min-height: 550px;
+    overflow: hidden;
+    max-width: unset !important;
+    padding: 0 !important;
+}
+
+.promo-banner-container {
+    margin: 0 !important;
+}
+
+.promo-banner-wrapper picture,
+.promo-banner-wrapper img {
+    width: 100%;
+    display: block;
+}
+
+.promo-banner-wrapper img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.promo-banner-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding-right: 10%;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.15) 0%,
+        rgba(0, 0, 0, 0.4) 50%,
+        rgba(0, 0, 0, 0.75) 100%
+    );
+}
+
+.promo-content {
+    width: 40%;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.promo-banner-overlay h2 {
+    font-size: 5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #fbbf24, #f97316, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+}
+
+.promo-ticker {
+    width: 500px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.promo-ticker-track {
+    display: flex;
+    gap: 80px;
+    width: max-content;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    animation: ticker 15s linear infinite;
+}
+
+.promo-ticker-track span {
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes ticker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.promo-banner-overlay .button {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    border: none;
+    padding: 16px 36px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(34, 197, 94, 0.3);
+}
+
+.promo-banner-overlay .button:hover {
+    background: #16a34a;
+    border-color: #16a34a;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1280px) {
+    .promo-banner-overlay {
+        padding: 40px;
+    }
+
+    .promo-content {
+        width: 60%;
+    }
+
+    .promo-banner-overlay h2 {
+        font-size: 3.5rem;
+    }
+
+    .promo-ticker {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .promo-banner-overlay {
+        padding: 40px;
+    }
+
+    .promo-content {
+        width: 60%;
+    }
+
+    .promo-banner-overlay h2 {
+        font-size: 3.5rem;
+    }
+
+    .promo-ticker {
+        width: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .promo-banner-wrapper {
+        min-height: 400px;
+    }
+
+    .promo-banner-wrapper img {
+        height: 400px;
+    }
+
+    .promo-content {
+        width: 70%;
+    }
+
+    .promo-banner-overlay {
+        align-items: center;
+        padding: 24px;
+    }
+
+    .promo-banner-overlay h2 {
+        font-size: 2rem;
+    }
+
+    .promo-ticker-track {
+        font-size: 1rem;
+    }
+
+    .promo-ticker {
+        width: 230px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .promo-ticker {
+        width: 650px;
+    }
+}
