@@ -1,5 +1,6 @@
 import { getMetadata } from "../../scripts/aem.js";
 import { loadFragment } from "../fragment/fragment.js";
+import { getCartCount } from "../../scripts/cart.js";
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia("(min-width: 900px)");
@@ -184,7 +185,7 @@ export default async function decorate(block) {
     navTools.innerHTML = `
       <div class="nav-tools-wrapper">
         <a class="nav-cart" href="/cart">
-          🛒 Cart <span class="cart-count">0</span>
+          🛒 Cart <span class="cart-count">${getCartCount()}</span>
         </a>
       </div>`;
   }
@@ -208,4 +209,11 @@ export default async function decorate(block) {
   navWrapper.className = "nav-wrapper";
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  document.addEventListener("cart-updated", () => {
+    const count = nav.querySelector(".cart-count");
+    if (count) {
+      count.textContent = getCartCount();
+    }
+  });
 }

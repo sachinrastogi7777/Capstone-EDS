@@ -34,7 +34,7 @@ export default async function decorate(block) {
     function renderProducts(items) {
       grid.innerHTML = "";
       items.forEach((product) => {
-        grid.append(createProductCard(product));
+        grid.append(createProductCard(product, "home"));
       });
     }
     if (isMobile) {
