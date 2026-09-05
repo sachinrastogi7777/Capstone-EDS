@@ -113,7 +113,6 @@ export default async function decorate(block) {
       const categoriesWrapper =
         categoriesSection.parentElement.querySelector(".filter-content");
       categoriesWrapper.classList.add("categories-filter");
-      console.log(categoriesWrapper);
       return categoriesWrapper;
     }
     return null;
@@ -124,7 +123,6 @@ export default async function decorate(block) {
       const response = await fetch("/products-list.json?sheet=categories");
       const data = await response.json();
       const categories = data.data || [];
-      console.log(categories);
       categories.forEach((category) => {
         const item = document.createElement("div");
         item.className = "filter-category";

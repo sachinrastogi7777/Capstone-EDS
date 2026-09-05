@@ -25,6 +25,7 @@ export function addItem(product) {
       title: product.title,
       thumbnail: product.thumbnail,
       price: Number(product.price),
+      discountPercentage: Number(product.discountPercentage),
       quantity: 1,
     });
   }
@@ -60,10 +61,12 @@ export function getCartCount() {
 }
 
 export function getCartTotal() {
-  return getItems().reduce(
-    (total, item) => total + item.price * item.quantity,
-    0,
-  );
+  const total = getItems().reduce((sum, item) => {
+    const discount = Math.round(item.discountPercentage || 0);
+    const discountedPrice = item.price * (1 - discount / 100);
+    return sum + discountedPrice * item.quantity;
+  }, 0);
+  return Number(total.toFixed(2));
 }
 
 export function clearCart() {

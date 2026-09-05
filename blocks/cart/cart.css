@@ -182,6 +182,32 @@
     cursor: pointer;
 }
 
+.featured-product-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #9ca3af;
+    font-size: 16px;
+}
+
+.discount-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.discount-badge {
+    color: #16a34a;
+    font-size: 13px;
+    font-weight: 700;
+}
+
 /* Tablet */
 
 @media (max-width: 1024px) {

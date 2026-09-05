@@ -8,6 +8,7 @@ import {
 export default function decorate(block) {
   function renderCart() {
     const items = getItems();
+    console.log(items)
     if (!items.length) {
       block.innerHTML = `
         <div class="empty-cart">
@@ -22,29 +23,43 @@ export default function decorate(block) {
         <div class="cart-items">
           <h1>Cart</h1>
           ${items
-            .map(
-              (item) => `
-                <div class="cart-item" data-id="${item.id}">
-                  <img
-                    class="cart-item-thumb"
-                    src="${item.thumbnail}"
-                    alt="${item.title}"
-                  />
-                  <div class="cart-item-info">
-                    <h3>${item.title}</h3>
-                    <div class="cart-price">$${item.price}</div>
-                  </div>
-                  <div class="cart-qty">
-                    <button class="qty-minus" data-id="${item.id}">-</button>
-                    <span>${item.quantity}</span>
-                    <button class="qty-plus" data-id="${item.id}">+</button>
-                  </div>
-                  <button class="remove-item" data-id="${item.id}" aria-label="Remove item">
-                    🗑
-                  </button>
-                </div>
-              `,
-            )
+            .map((item) => {
+              const discount = Math.round(item.discountPercentage || 0);
+              const discountedPrice = (
+                item.price *
+                (1 - discount / 100)
+              ).toFixed(2);
+              return `
+                  <div class="cart-item" data-id="${item.id}">
+                    <img
+                      class="cart-item-thumb"
+                      src="${item.thumbnail}"
+                      alt="${item.title}"
+                    />
+                    <div class="cart-item-info">
+                      <h3>${item.title}</h3>
+                      <div class="featured-product-pricing">
+                        <span class="original-price">
+                          $${item.price}
+                        </span>
+                        <span class="discount-price">
+                          $${discountedPrice}
+                        </span>
+                        <span class="discount-badge">
+                          (${discount}% OFF)
+                        </span>
+                      </div>
+                    </div>
+                    <div class="cart-qty">
+                      <button class="qty-minus" data-id="${item.id}">-</button>
+                      <span>${item.quantity}</span>
+                      <button class="qty-plus" data-id="${item.id}">+</button>
+                    </div>
+                    <button class="remove-item" data-id="${item.id}" aria-label="Remove item">
+                      🗑
+                    </button>
+                  </div>`;
+            })
             .join("")}
         </div>
         <aside class="order-summary">
@@ -73,10 +88,10 @@ export default function decorate(block) {
     block.querySelectorAll(".qty-plus").forEach((button) => {
       button.addEventListener("click", () => {
         const id = Number(button.dataset.id);
-        const item = getItems().find((product) => String(product.id) === String(id));
-        console.log("Before", getItems());
+        const item = getItems().find(
+          (product) => String(product.id) === String(id),
+        );
         updateQuantity(id, item.quantity + 1);
-        console.log("After", getItems());
         renderCart();
       });
     });
@@ -84,7 +99,9 @@ export default function decorate(block) {
     block.querySelectorAll(".qty-minus").forEach((button) => {
       button.addEventListener("click", () => {
         const id = Number(button.dataset.id);
-        const item = getItems().find((product) => String(product.id) === String(id));
+        const item = getItems().find(
+          (product) => String(product.id) === String(id),
+        );
         if (item.quantity - 1 <= 0) {
           removeItem(id);
         } else {

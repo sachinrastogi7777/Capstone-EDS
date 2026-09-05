@@ -111,14 +111,14 @@ export default async function decorate(block) {
             ${
               quantity > 0
                 ? `<div class="qty-controls">
-                  <button class="qty-minus">
-                    -
-                  </button>
-                  <span>${quantity}</span>
-                  <button class="qty-plus">
-                    +
-                  </button>
-                </div>`
+                    <button class="qty-minus">
+                      -
+                    </button>
+                    <span>${quantity}</span>
+                    <button class="qty-plus">
+                      +
+                    </button>
+                  </div>`
                 : `<button class="add-to-cart-btn">
                   Add To Cart
                 </button>`

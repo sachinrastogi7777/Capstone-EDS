@@ -1,0 +1,169 @@
+#product-details {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pdp-static {
+    max-width: 1400px;
+    margin: auto;
+}
+
+.pdp-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.pdp-gallery {
+    padding: 30px;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+}
+
+.pdp-gallery picture,
+.pdp-gallery img {
+    display: block;
+    width: 100%;
+}
+
+.pdp-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.meta-pill {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pdp-info {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+}
+
+.pdp-info h1 {
+    font-size: 2.5rem;
+    line-height: 1.15;
+    max-width: 700px;
+    margin-top: 10px;
+}
+
+.pdp-tags {
+    display: flex;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.pdp-tag {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #4338ca;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.pdp-rating {
+    color: #f59e0b;
+    font-size: 20px;
+    font-weight: 600;
+    min-height: 30px;
+}
+
+.pdp-pricing {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.new-price {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.discount-badge {
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.pdp-description {
+    margin: 24px 0;
+    line-height: 1.8;
+}
+
+.pdp-stock {
+    margin: 20px 0;
+    color: #16a34a;
+    font-weight: 700;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.qty-controls span {
+    min-width: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.qty-controls button,
+.add-to-cart-btn {
+    padding: 4px 12px;
+    border: none;
+    border-radius: 999px;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+
+.qty-plus,
+.qty-minus {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.add-to-cart-btn {
+    padding: 14px 26px;
+    border-radius: 999px;
+}
+
+@media (max-width: 1024px) {
+    .pdp-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .pdp-info h1 {
+        font-size: 2rem;
+    }
+
+    .new-price {
+        font-size: 32px;
+    }
+
+    .pdp-meta {
+        flex-wrap: wrap;
+    }
+
+    .pdp-tags {
+        flex-wrap: wrap;
+    }
+}
