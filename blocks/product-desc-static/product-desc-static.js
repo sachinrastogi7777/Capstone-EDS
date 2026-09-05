@@ -113,12 +113,12 @@ export default function decorate(block) {
     const qty = getItemQuantity(productId);
     if (qty === 0) {
       cartContainer.innerHTML = `
-        <button class="add-to-cart-btn">
+        <button class="add-to-cart-btn-static">
           Add To Cart
         </button>`;
 
       cartContainer
-        .querySelector(".add-to-cart-btn")
+        .querySelector(".add-to-cart-btn-static")
         .addEventListener("click", () => {
           addItem(product);
           rerenderCart();
@@ -127,7 +127,7 @@ export default function decorate(block) {
     }
 
     cartContainer.innerHTML = `
-      <div class="qty-controls">
+      <div class="qty-controls-static">
         <button class="qty-minus">
           -
         </button>

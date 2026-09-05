@@ -75,11 +75,11 @@ export default async function decorate(block) {
           type="range"
           id="priceRange"
           min="0"
-          max="10000"
-          value="10000"
+          max="50000"
+          value="50000"
         />
         <div class="price-value">
-          $0 - $10000
+          $0 - $50000
         </div>`;
       const priceRange = priceWrapper.querySelector("#priceRange");
       priceRange.addEventListener("input", (e) => {
@@ -447,12 +447,12 @@ export default async function decorate(block) {
       });
     const priceRange = filtersContainer.querySelector("#priceRange");
     if (priceRange) {
-      priceRange.value = 10000;
+      priceRange.value = 50000;
     }
     const priceValue = filtersContainer.querySelector(".price-value");
 
     if (priceValue) {
-      priceValue.textContent = "$0 - $10000";
+      priceValue.textContent = "$0 - $50000";
     }
     localStorage.removeItem("active-filters");
     currentPage = 1;

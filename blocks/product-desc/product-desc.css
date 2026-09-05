@@ -3,6 +3,10 @@
     margin-bottom: 60px;
 }
 
+.default-content-wrapper h2 {
+    text-align: center;
+}
+
 .pdp {
     max-width: 1400px;
     margin: auto;
@@ -47,6 +51,10 @@
 .pdp-brand {
     font-weight: 700;
     color: #111;
+}
+
+.pdp-cart .qty-controls button {
+    padding: 0;
 }
 
 .pdp-gallery {
@@ -188,7 +196,6 @@
 
 .qty-controls button,
 .add-to-cart-btn {
-    padding: 12px 18px;
     border: none;
     border-radius: 999px;
     background: #22c55e;
