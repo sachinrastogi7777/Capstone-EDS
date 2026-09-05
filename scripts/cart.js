@@ -32,16 +32,23 @@ export function addItem(product) {
 }
 
 export function removeItem(productId) {
-  const items = getItems().filter((item) => item.id !== productId);
+  const items = getItems().filter(
+    (item) => String(item.id) !== String(productId),
+  );
   saveItems(items);
 }
 
 export function updateQuantity(productId, quantity) {
   const items = getItems();
-  const item = items.find((product) => product.id === productId);
-  if (!item) return;
+  const item = items.find(
+    (product) => String(product.id) === String(productId),
+  );
+  if (!item) {
+    console.log("Item not found", productId);
+    return;
+  }
   item.quantity = quantity;
-  if (item.quantity <= 0) {
+  if (quantity <= 0) {
     removeItem(productId);
     return;
   }
@@ -65,7 +72,9 @@ export function clearCart() {
 }
 
 export function getItemQuantity(productId) {
-  const item = getItems().find((product) => product.id === productId);
+  const item = getItems().find(
+    (product) => String(product.id) === String(productId),
+  );
   return item ? item.quantity : 0;
 }
 

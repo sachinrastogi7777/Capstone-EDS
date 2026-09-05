@@ -25,7 +25,7 @@ export default function createProductCard(product, mode) {
   if (mode === "home") {
     action = `
       <a
-        href="/product?id=${product.id}"
+        href="/product-desc?id=${product.id}"
         class="featured-product-link"
       >
         View Product
@@ -59,7 +59,7 @@ export default function createProductCard(product, mode) {
           ${quantityMarkup}
         </div>
         <a
-          href="/product?id=${product.id}"
+          href="/product-desc?id=${product.id}"
           class="featured-product-link"
         >
           View Product
