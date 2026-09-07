@@ -18,15 +18,6 @@ indices:
       image:
         select: head > meta[property="og:image"]
         value: attribute(el, "content")
-      template:
-        select: head > meta[name="template"]
-        value: attribute(el, "content")
-      theme:
-        select: head > meta[name="theme"]
-        value: attribute(el, "content")
-      tags:
-        select: head > meta[name="tags"]
-        value: attribute(el, "content")
       ogTitle:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
