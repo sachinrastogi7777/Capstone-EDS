@@ -80,7 +80,7 @@ export default function decorate(block) {
                           <div class="item-price">
                             $${(
                               item.price *
-                              (1 - (item.discountPercentage || 0) / 100) *
+                              (1 - (Math.round(item.discountPercentage) || 0) / 100) *
                               item.quantity
                             ).toFixed(2)}
                           </div>
