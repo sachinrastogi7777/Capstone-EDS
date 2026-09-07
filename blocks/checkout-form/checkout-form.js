@@ -241,7 +241,7 @@ export default function decorate(block) {
     toast.textContent = "✅ Order placed successfully!";
     document.body.appendChild(toast);
     setTimeout(() => {
-      window.location.href = "/order-sucess";
+      window.location.href = "/order-success";
     }, 1000);
   });
 }
