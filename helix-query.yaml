@@ -13,8 +13,29 @@ indices:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
       description:
-        select: head > meta[name="og:description"]
+        select: head > meta[name="description"]
         value: attribute(el, "content")
       image:
         select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      theme:
+        select: head > meta[name="theme"]
+        value: attribute(el, "content")
+      tags:
+        select: head > meta[name="tags"]
+        value: attribute(el, "content")
+      ogTitle:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      ogDescription:
+        select: head > meta[property="og:description"]
+        value: attribute(el, "content")
+      ogImage:
+        select: head > meta[property="og:image"]
+        value: attribute(el, "content")
+      robots:
+        select: head > meta[name="robots"]
         value: attribute(el, "content")
