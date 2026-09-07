@@ -1,0 +1,135 @@
+.default-content-wrapper {
+    text-align: center;
+}
+
+.account-overview {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.account-profile-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.account-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #22c55e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.account-profile-info h2 {
+    margin: 0 0 8px;
+}
+
+.account-profile-info p {
+    margin: 0;
+    color: #6b7280;
+}
+
+.account-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.account-stat-card {
+    background: #fff;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #22c55e;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: #6b7280;
+}
+
+.account-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.account-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: #22c55e;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-btn:hover {
+    background: #16a34a;
+    text-decoration: none;
+}
+
+.account-order-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    margin: 32px auto 0;
+    padding: 14px 32px;
+    border-radius: 999px;
+    background: #22c55e;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.account-order-link:hover {
+    background: #16a34a;
+    text-decoration: none;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+    .account-profile-card {
+        padding: 24px;
+    }
+
+    .account-stats {
+        gap: 16px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .account-profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .account-stats {
+        grid-template-columns: 1fr;
+    }
+}

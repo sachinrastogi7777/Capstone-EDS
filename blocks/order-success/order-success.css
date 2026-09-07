@@ -1,0 +1,90 @@
+.order-success-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    background: #fff;
+    padding: 48px;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+}
+
+.success-icon {
+    font-size: 72px;
+    margin-bottom: 24px;
+}
+
+.order-success-card h2 {
+    margin-bottom: 16px;
+    font-size: 2.5rem;
+}
+
+.success-message {
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+.order-meta {
+    background: #f8fafc;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+}
+
+.order-meta p {
+    margin: 8px 0;
+}
+
+.order-success-container .default-content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+}
+
+.order-success-container .default-content-wrapper p {
+    margin: 0;
+}
+
+.order-success-container .default-content-wrapper a {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 220px;
+
+    padding: 14px 28px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+.order-success-container .default-content-wrapper p:first-child a {
+    background: #22c55e;
+    color: #fff;
+}
+
+.order-success-container .default-content-wrapper p:last-child a {
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    background: #fff;
+}
+
+.order-success-container .default-content-wrapper h2 {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+    .order-success-card {
+        padding: 32px 20px;
+    }
+
+    .order-success-card h2 {
+        font-size: 2rem;
+    }
+}

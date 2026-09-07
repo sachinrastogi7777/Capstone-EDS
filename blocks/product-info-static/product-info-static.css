@@ -1,0 +1,42 @@
+.pdp-details {
+    margin-top: 80px;
+}
+
+.pdp-accordion {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 20px 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.accordion-header::after {
+    content: "▾";
+}
+
+.accordion-content {
+    display: none;
+    padding-bottom: 20px;
+}
+
+.pdp-accordion.expanded .accordion-content {
+    display: block;
+}
+
+.accordion-content table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.accordion-content td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}

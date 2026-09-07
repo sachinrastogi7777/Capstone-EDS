@@ -1,0 +1,16 @@
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: auto auto 40px auto !important;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        align-items: start;
+        margin-bottom: 80px;
+    }
+}
